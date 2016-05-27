@@ -46,6 +46,10 @@ install            :
 	chown root:root /usr/local/sbin/${BASE}
 	chmod 0755      /usr/local/sbin/${BASE}
 	chmod +s        /usr/local/sbin/${BASE}
+	rm -f     /usr/share/man/man3/${BASE}.3.bz2
+	cp -f     ${BASE}.3    /usr/share/man/man3/
+	bzip2     /usr/share/man/man3/${BASE}.3
+	chmod     0644  /usr/share/man/man3/${BASE}.3.bz2
 
 
 #*============================----end-of-source---============================*#

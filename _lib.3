@@ -1,0 +1,51 @@
+.TH _lib 3 2008-Jul "linux" "heatherly custom tools manual"
+
+.SH NAME
+.BI _lib
+\- simple, consistent library and header installer
+
+.SH SYNOPSIS
+.nf
+.B _lib [OPTIONS] [<FILE>]
+
+.SH SUMMARY
+.BI _lib
+is a quick set of capabilities to move custom developed shared (.so)
+and static (.a) libraries into the right places for use by other programs
+as well as their associated header files.
+
+.SH OPTIONS
+
+.B <FILE>
+.RS 8
+base name of the library to be installed, so yLOG.a and yLOG.so would both
+be named as yLOG in this instance.
+.RE
+
+.B -l
+, list all locally installed libraries in summary form
+
+.B -v
+, list all locally installed libraries in verbose form
+
+.B -a
+, install a static/archive library (.a) and its header
+
+.B -A
+, install a static/archive library (.a) without its header
+
+.B -s
+, install a dynamic/shared library (.so) and its header
+
+.B -S
+, install a dynamic/shared library (.so) without its header
+
+.B -i
+, install both static and shared libraries with their header
+
+.SH AUTHOR
+rsheatherly can be reached at jelloshrike at gmail dot com
+
+.SH COLOPHON
+this page is part of a documentation package meant to make use of the
+heatherly tools easier and faster
