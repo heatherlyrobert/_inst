@@ -47,7 +47,7 @@
 #define  HEADERS      "/usr/local/include"
 #define  LIBRARIES    "/usr/local/lib"
 
-#define   _LIB_VER_NUM      "2.0b"
-#define   _LIB_VER_TXT      "break out header file for git usage"
+#define   _LIB_VER_NUM      "2.0c"
+#define   _LIB_VER_TXT      "simple header lines to list view"
 
 

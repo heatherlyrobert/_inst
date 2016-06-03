@@ -144,10 +144,12 @@ main               (int argc, const char *argv[])
    /*---(handle no arg options)-----------*/
    switch (x_option) {
    case 'l':
+      printf ("#---shared libs----------------\n");
       snprintf(x_cmd, 200, "ls -1 %s/liby*.so 2> /dev/null", LIBRARIES);
       x_rc = system(x_cmd);
       if (x_rc != 0)            printf("no shared objects\n");
       snprintf(x_cmd, 200, "ls -1 %s/liby*.a 2> /dev/null", LIBRARIES);
+      printf ("#---static libs----------------\n");
       x_rc = system(x_cmd);
       if (x_rc != 0)            printf("no archive objects\n");
       return 0;
