@@ -47,7 +47,11 @@
 #define  HEADERS      "/usr/local/include"
 #define  LIBRARIES    "/usr/local/lib"
 
-#define   _LIB_VER_NUM      "2.0c"
-#define   _LIB_VER_TXT      "simple header lines to list view"
+#define   P_VERNUM      "2.0e"
+#define   P_VERTXT      "added/fixed library versioning"
 
+typedef struct stat      tSTAT;
+#define   LEN_FULL       200
+#define   LEN_TERSE       10
+typedef   const char   cchar;
 

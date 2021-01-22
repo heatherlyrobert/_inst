@@ -15,10 +15,12 @@ all                : ${BASE} _inst
 
 ${BASE}            : ${BASE}.o
 	${LINK}  -o ${BASE} ${BASE}.o
+	${LINK}  -o getver  getver.o
 
 ${BASE}.o          : ${BASE}.c
 	${PRINTF} "\n#---((make library installer))------------\n"
 	${COMP}  _lib.c
+	${COMP}  getver.c
 
 _inst              : 
 	${PRINTF} "\n#---((make program installer))------------\n"
@@ -39,14 +41,22 @@ remove             :
 
 install            :
 	${PRINTF} "\n#---((install current versions))----------\n"
-	mv -f _inst       /usr/local/sbin/
-	chown root:root   /usr/local/sbin/_inst
-	chmod 0755        /usr/local/sbin/_inst
-	cp -f ${BASE}   /usr/local/sbin/
-	chown root:root /usr/local/sbin/${BASE}
-	chmod 0755      /usr/local/sbin/${BASE}
-	chmod +s        /usr/local/sbin/${BASE}
-	rm -f     /usr/share/man/man3/${BASE}.3.bz2
+	#---(_inst first)----------------------------#
+	cp -f _inst         /usr/local/sbin/
+	chown root:root     /usr/local/sbin/_inst
+	chmod 0755          /usr/local/sbin/_inst
+	#---(then _lib)------------------------------#
+	cp -f ${BASE}       /usr/local/sbin/
+	chown root:root     /usr/local/sbin/${BASE}
+	chmod 0755          /usr/local/sbin/${BASE}
+	chmod +s            /usr/local/sbin/${BASE}
+	#---(then getver)----------------------------#
+	cp -f getver        /usr/local/sbin/
+	chown root:root     /usr/local/sbin/getver
+	chmod 0755          /usr/local/sbin/getver
+	chmod +s            /usr/local/sbin/getver
+	#---(then manual)----------------------------#
+	rm -f               /usr/share/man/man3/${BASE}.3.bz2
 	cp -f     ${BASE}.3    /usr/share/man/man3/
 	bzip2     /usr/share/man/man3/${BASE}.3
 	chmod     0644  /usr/share/man/man3/${BASE}.3.bz2
