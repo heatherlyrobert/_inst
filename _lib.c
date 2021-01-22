@@ -205,7 +205,7 @@ shared_install          (cchar *a_name, cchar *a_vernum)
    rc = system (x_cmd);
    if (rc != 0)                error_fatal (x_full, "can not copy to shared folder");
    /*---(fix permissions)------------------*/
-   snprintf (x_cmd , LEN_FULL, "chmod 0755 %s/   &> /dev/null", LIBRARIES, x_full);
+   snprintf (x_cmd , LEN_FULL, "chmod 0755 %s/%s   &> /dev/null", LIBRARIES, x_full);
    rc = system (x_cmd);
    if (rc != 0)                error_fatal (x_full, "can not change permissions");
    /*---(link to major)--------------------*/

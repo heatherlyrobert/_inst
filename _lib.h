@@ -47,8 +47,8 @@
 #define  HEADERS      "/usr/local/include"
 #define  LIBRARIES    "/usr/local/lib"
 
-#define   P_VERNUM      "2.0e"
-#define   P_VERTXT      "added/fixed library versioning"
+#define   P_VERNUM      "2.0f"
+#define   P_VERTXT      "new library versioning fix for permissions on install"
 
 typedef struct stat      tSTAT;
 #define   LEN_FULL       200
